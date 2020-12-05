@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_151050) do
     t.bigint "order_id"
     t.bigint "item_id"
     t.integer "quantity"
-    t.string "subtotal"
+    t.float "subtotal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_order_items_on_item_id"

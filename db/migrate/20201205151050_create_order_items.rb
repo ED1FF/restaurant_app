@@ -4,7 +4,7 @@ class CreateOrderItems < ActiveRecord::Migration[5.2]
       t.references :order, foreign_key: true
       t.references :item, foreign_key: true
       t.integer :quantity
-      t.string :subtotal
+      t.float :subtotal
 
       t.timestamps
     end
