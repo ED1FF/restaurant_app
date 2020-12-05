@@ -1,6 +1,6 @@
 .card.p-3.mb-3
   .card-body
-    = simple_form_for :order_item do |f|
+    = simple_form_for :order_item, url: order_items_path do |f|
       = f.input :item_id, as: :hidden, input_html: { value: item.id }
       .container.row
         .col-8
