@@ -1,4 +1,19 @@
 # frozen_string_literal: true
 
 class OrdersController < ApplicationController
+  expose :order
+  expose :restaurant, from: :order
+  expose :order_items, from: :order
+
+  def update
+    order.update(order_params)
+    flash[:notice] = "Order has been submit"
+    redirect_to restaurants_url
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:visit_at, :status)
+  end
 end

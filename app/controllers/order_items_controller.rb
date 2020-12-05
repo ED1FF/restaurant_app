@@ -11,6 +11,11 @@ class OrderItemsController < ApplicationController
     redirect_to restaurant
   end
 
+  def update
+    order_item.update(order_item_params)
+    redirect_to edit_order_path(order)
+  end
+
   private
 
   def order_item_params
