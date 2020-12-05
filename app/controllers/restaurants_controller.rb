@@ -2,4 +2,5 @@
 
 class RestaurantsController < ApplicationController
   expose :restaurants, -> { Restaurant.all }
+  expose :restaurant
 end
