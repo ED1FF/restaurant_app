@@ -1,0 +1,10 @@
+h3.mb-3 = link_to 'Back', orders_path
+h3.mb-3 = link_to "Order For #{restaurant.name}", restaurant
+
+= render order_items
+.card.p-3.mb-3
+  .card-body
+      .container.row
+        h3.card-title Order Info
+        .card-body= order.visit_at
+        h4.mt-3= "Total Price: #{order_items.sum(:subtotal)}"

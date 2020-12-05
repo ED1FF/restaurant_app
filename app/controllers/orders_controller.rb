@@ -2,6 +2,7 @@
 
 class OrdersController < ApplicationController
   expose :order
+  expose :orders, from: :current_user
   expose :restaurant, from: :order
   expose :order_items, from: :order
 

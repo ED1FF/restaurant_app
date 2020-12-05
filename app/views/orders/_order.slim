@@ -1,0 +1,11 @@
+.card.p-3.mb-3
+  .card-body
+    .container.row
+      .col-3
+        h3.card-title = order.restaurant.name
+        .card-text = order.visit_at
+      .col-3
+        h4.mt-3= "Total Price: #{order_items.sum(:subtotal)}"
+      .col-3
+        h4.mt-3 = order.status.titleize
+      .col-3 = link_to 'Show Order', order

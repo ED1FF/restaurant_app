@@ -1,13 +1,15 @@
 h3.mb-3 = link_to 'Back', restaurants_url
 h3.mb-3 = link_to "Order For #{restaurant.name}", restaurant
 
-= render order_items
-.card.p-3.mb-3
-  .card-body
-    = simple_form_for order, url: order_url(order) do |f|
-      .container.row
-        h3.card-title Order Info
-        .card-body
-          = f.input :visit_at
-          = f.input :status, as: :hidden, input_html: { value: :pending }
-          = f.submit 'Submit', class: 'btn btn-primary mt-3'
+- if order.cart?
+  = render order_items
+  .card.p-3.mb-3
+    .card-body
+      = simple_form_for order, url: order_url(order) do |f|
+        .container.row
+          h3.card-title Order Info
+          .card-body
+            = f.input :visit_at
+            h4.mt-3= "Total Price: #{order_items.sum(:subtotal)}"
+            = f.input :status, as: :hidden, input_html: { value: :pending }
+            = f.submit 'Submit', class: 'btn btn-primary mt-3'

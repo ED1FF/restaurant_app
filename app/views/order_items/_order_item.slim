@@ -6,7 +6,8 @@
         .col-8
           h3.card-title = order_item.item.name
           .card-text = order_item.item.description
-        .col-2
-          = f.input :quantity, as: :integer
-        .col-2
-          = f.submit 'Update Quantity', class: 'btn btn-primary'
+        - if order.cart?
+          .col-2
+            = f.input :quantity, as: :integer
+          .col-2
+            = f.submit 'Update Quantity', class: 'btn btn-primary'
