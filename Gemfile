@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise'
+gem 'simple_form'
 gem "slim-rails"
 gem 'decent_exposure', '3.0.0'
 gem 'jquery-rails'
