@@ -6,4 +6,5 @@ class Order < ApplicationRecord
   has_many :order_items, dependent: :destroy
 
   enum status: %i[cart pending complete]
+  enum category: %i[visit delivery]
 end

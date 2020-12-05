@@ -6,6 +6,8 @@
         .card-text = order.visit_at
       .col-3
         h4.mt-3= "Total Price: #{order_items.sum(:subtotal)}"
-      .col-3
+      .col-2
         h4.mt-3 = order.status.titleize
-      .col-3 = link_to 'Show Order', order
+      .col-2
+        h4.mt-3 = order.category.titleize
+      .col-2 = link_to 'Show Order', order

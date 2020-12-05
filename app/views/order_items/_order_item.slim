@@ -3,15 +3,14 @@
     = simple_form_for order_item, url: order_item_url(order_item) do |f|
       = f.input :item_id, as: :hidden, input_html: { value: order_item.item_id }
       .container.row
-        .col-8
+        .col-3
           h3.card-title = order_item.item.name
-          .card-text = order_item.item.description
+        h3.col-3= "Subtotal: #{order_item.subtotal}"
         - if order.cart?
-          .col-2
+          .col-3
             = f.input :quantity, as: :integer
-          .col-2
+          .col-3
             = f.submit 'Update Quantity', class: 'btn btn-primary'
         - else
-          .col-2
-          .col-2
+          .col-3
             h3.mt-3= "Quantity: #{order_item.quantity}"

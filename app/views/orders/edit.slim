@@ -9,7 +9,8 @@ h3.mb-3 = link_to "Order For #{restaurant.name}", restaurant
         .container.row
           h3.card-title Order Info
           .card-body
-            = f.input :visit_at
-            h4.mt-3= "Total Price: #{order_items.sum(:subtotal)}"
+            .mb-3 = f.input :category, collection: Order.categories.keys, label: 'Order Type', label_method: :titleize, include_blank: false
+            .mb-3 = f.input :visit_at
+            h4.mt-3 = "Total Price: #{order_items.sum(:subtotal)}"
             = f.input :status, as: :hidden, input_html: { value: :pending }
             = f.submit 'Submit', class: 'btn btn-primary mt-3'
