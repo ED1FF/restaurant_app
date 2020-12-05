@@ -1,0 +1,5 @@
+.card.p-3.mb-3
+  .card-body
+    h3.card-title = restaurant.name
+    .card-text = restaurant.description
+    = link_to 'Show', restaurant_url(restaurant), class: 'btn btn-primary mt-3'

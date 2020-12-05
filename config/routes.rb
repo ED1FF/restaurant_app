@@ -3,5 +3,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'home#index'
+  unauthenticated do
+    root to: 'home#index'
+  end
+
+  authenticated do
+    root 'restaurants#index'
+  end
+
+  resources :restaurants, only: %i[index show]
 end
