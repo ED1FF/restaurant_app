@@ -2,7 +2,7 @@
 
 module Constants
   module Cities
-    LIST = %w[Kyiv
+    UKRAINE = %w[Kyiv
               Kharkiv
               Odesa
               Dnipro

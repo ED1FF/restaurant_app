@@ -3,7 +3,7 @@
 class CreateAddresses < ActiveRecord::Migration[5.2]
   def change
     create_table :addresses do |t|
-      t.refereces :city, index: true
+      t.references :city, index: true
       t.string :street
       t.bigint  :addressable_id
       t.string  :addressable_type
