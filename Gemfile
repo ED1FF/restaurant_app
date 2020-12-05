@@ -17,14 +17,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 5.0.0.alpha3'
 gem 'decent_exposure', '3.0.0'
 gem 'devise'
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'jquery-rails'
 gem 'jquery-rails'
 gem 'paper_trail'
 gem 'rails-i18n', '~> 5.1'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

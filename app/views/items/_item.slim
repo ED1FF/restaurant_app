@@ -7,6 +7,6 @@
           h3.card-title = item.name
           .card-text = item.description
         .col-2
-            = f.input :quantity
+            = f.input :quantity, as: :integer
         .col-2
             = f.submit 'Add to cart', class: 'btn btn-primary'
