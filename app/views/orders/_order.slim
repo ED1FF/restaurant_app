@@ -5,7 +5,7 @@
         h3.card-title = order.restaurant.name
         .card-text = order.visit_at
       .col-3
-        h4.mt-3= "Total Price: #{order_items.sum(:subtotal)}"
+        h4.mt-3= "Total Price: #{order.order_items.sum(:subtotal)}"
       .col-2
         h4.mt-3 = order.status.titleize
       .col-2
