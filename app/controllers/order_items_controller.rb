@@ -8,11 +8,13 @@ class OrderItemsController < ApplicationController
 
   def create
     order.order_items.create(order_item_params)
+    flash[:notice] = "Item has been added to cart"
     redirect_to restaurant
   end
 
   def update
     order_item.update(order_item_params)
+    flash[:notice] = "Item quantity has been updated"
     redirect_to edit_order_path(order)
   end
 
