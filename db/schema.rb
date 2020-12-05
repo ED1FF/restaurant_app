@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_151050) do
   create_table "order_items", force: :cascade do |t|
     t.bigint "order_id"
     t.bigint "item_id"
-    t.string "quantity"
+    t.integer "quantity"
     t.string "subtotal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

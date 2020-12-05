@@ -1,4 +1,12 @@
 .card.p-3.mb-3
   .card-body
-    h3.card-title = item.name
-    .card-text = item.description
+    = simple_form_for :order_item do |f|
+      = f.input :item_id, as: :hidden, input_html: { value: item.id }
+      .container.row
+        .col-8
+          h3.card-title = item.name
+          .card-text = item.description
+        .col-2
+            = f.input :quantity
+        .col-2
+            = f.submit 'Add to cart', class: 'btn btn-primary'
