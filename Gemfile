@@ -23,6 +23,8 @@ gem 'paper_trail'
 gem 'rails-i18n', '~> 5.1'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
