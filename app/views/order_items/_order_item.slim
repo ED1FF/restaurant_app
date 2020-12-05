@@ -11,3 +11,7 @@
             = f.input :quantity, as: :integer
           .col-2
             = f.submit 'Update Quantity', class: 'btn btn-primary'
+        - else
+          .col-2
+          .col-2
+            h3.mt-3= "Quantity: #{order_item.quantity}"
