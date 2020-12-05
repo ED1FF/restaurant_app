@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :restaurants, only: %i[index show]
+  resources :orders, only: %i[index show edit update]
+  resources :order_items, only: %i[create delete]
 end
