@@ -1,4 +1,5 @@
 h3.mb-5= link_to 'Back', restaurants_url
+h3.mb-5= link_to 'Check your cart', order_url(order.id) if order
 .card.p-3.mb-3
   .card-body
     h3.card-title = restaurant.name
