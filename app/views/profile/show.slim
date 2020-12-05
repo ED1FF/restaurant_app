@@ -1,0 +1,28 @@
+.d-flex.justify-content-between
+  h1= link_to 'Back', restaurants_url
+  h1 Your Profile
+  h1= link_to 'Your Orders', orders_url
+
+= simple_form_for current_user, url: profile_url do |f|
+  h3.mt-5 Update your password
+  .mb-3= f.input :password, required: true
+  .mb-3= f.input :password_confirmation, required: true
+  .mb-3= f.button :submit, "Update data", class: 'btn-primary'
+
+= simple_form_for current_user, url: profile_url do |f|
+  h3.mt-5 General Info
+  .mb-3= f.input :email, required: true, autofocus: true, input_html: { autocomplete: "email" }
+  .mb-3= f.input :first_name, required: true
+  .mb-3= f.input :last_name, required: true
+  .mb-3= f.input :phone_number, required: true
+  .mb-3= f.button :submit, "Update data", class: 'btn-primary'
+
+= simple_form_for current_user, url: profile_url do |f|
+  = f.simple_fields_for :address do |addr|
+    = addr.input :id, as: :hidden
+    h3.mt-5 Delivery Address
+    .mb-3= addr.input :street, required: true
+    .mb-3= addr.input :city_id, collection: City.all
+    .mb-3= addr.input :notes
+    .mb-3= addr.input :phone_number, required: true
+    .mb-3= f.button :submit, "Update Address", class: 'btn-primary'
